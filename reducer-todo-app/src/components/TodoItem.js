@@ -2,17 +2,16 @@ import React, { useState, useReducer } from "react";
 import { initialState, reducer } from "../reducers/reducer";
 import "../App.css";
 
-function TodoItem({ item }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+function TodoItem({ item, state, dispatch }) {
   const [isCompleted, setIsCompleted] = useState(item.completed);
-
+  console.log(state);
   return (
     <div>
       <h3
         className={isCompleted === true ? "completed" : null}
         onClick={() => {
-          dispatch({ type: "TOGGLE_COMPLETED", payload: isCompleted });
           setIsCompleted(!isCompleted);
+          dispatch({ type: "TOGGLE_COMPLETED", payload: item.id });
         }}
       >
         {item.item}

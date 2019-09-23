@@ -15,15 +15,22 @@ export const reducer = (state, action) => {
       ];
     case "TOGGLE_COMPLETED":
       return state.map(item => {
-        if (state.id === action.payload.id) {
-          console.log("Toggle completed");
-          console.log(!item.completed);
+        if (item.id === action.payload) {
           console.log(item);
-
           return {
             ...item,
             completed: !item.completed
           };
+        } else {
+          return item;
+        }
+      });
+    case "COMPLETED_BEGONE":
+      return state.filter(item => {
+        console.log(item.completed);
+        if (item.completed === true) {
+          console.log("IT IS TRUE");
+          return null;
         } else {
           return item;
         }
