@@ -4,4 +4,9 @@ export const initialState = {
   id: 3892987589
 };
 
-export const reducer = (state, action) => {};
+export const reducer = (state, action) => {
+  //   switch (action.type) {
+  //       case "DISPLAY"
+  //   }
+  return state;
+};
