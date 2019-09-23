@@ -5,7 +5,6 @@ import TodoItem from "./TodoItem";
 function Todo() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [newTodoItem, setNewTodoItem] = useState();
-  let [clearCompleted, setClearCompleted] = useState(0);
 
   const handleChanges = e => {
     setNewTodoItem(e.target.value);
@@ -31,8 +30,6 @@ function Todo() {
       })}
       <button
         onClick={() => {
-          setClearCompleted((clearCompleted += 1));
-          console.log(state);
           dispatch({ type: "COMPLETED_BEGONE" });
         }}
       >

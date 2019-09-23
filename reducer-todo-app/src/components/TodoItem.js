@@ -1,10 +1,8 @@
-import React, { useState, useReducer } from "react";
-import { initialState, reducer } from "../reducers/reducer";
+import React, { useState } from "react";
 import "../App.css";
 
 function TodoItem({ item, state, dispatch }) {
   const [isCompleted, setIsCompleted] = useState(item.completed);
-  console.log(state);
   return (
     <div>
       <h3

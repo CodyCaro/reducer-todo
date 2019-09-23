@@ -16,7 +16,6 @@ export const reducer = (state, action) => {
     case "TOGGLE_COMPLETED":
       return state.map(item => {
         if (item.id === action.payload) {
-          console.log(item);
           return {
             ...item,
             completed: !item.completed
@@ -27,9 +26,7 @@ export const reducer = (state, action) => {
       });
     case "COMPLETED_BEGONE":
       return state.filter(item => {
-        console.log(item.completed);
         if (item.completed === true) {
-          console.log("IT IS TRUE");
           return null;
         } else {
           return item;
